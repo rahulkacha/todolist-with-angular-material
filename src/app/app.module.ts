@@ -11,9 +11,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { FormComponent } from './form/form.component';
+import { IndexComponent } from './index/index.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FormComponent, IndexComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -25,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatNativeDateModule,
     MatButtonModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

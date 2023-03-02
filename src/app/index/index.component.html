@@ -1,0 +1,9 @@
+<mat-selection-list #tasks>
+  <mat-list-option *ngFor="let task of pendingTasks">
+    <div>
+      <p>{{ task["taskDesc"] }} added on {{ task["date"] }}</p>
+    </div>
+  </mat-list-option>
+  <p>{{ tasks.selectedOptions.selected }}</p>
+</mat-selection-list>
+<button (click)="onLoad()">get tasks</button>

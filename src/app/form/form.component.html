@@ -1,0 +1,45 @@
+<form class="example-form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>enter some task...</mat-label>
+        <input
+          #description="ngModel"
+          required
+          [(ngModel)]="todoModel.desc"
+          matInput
+          placeholder="e.g. test the controller"
+          value=""
+          name="desc"
+        />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input
+          #date="ngModel"
+          required
+          [min]="minDate"
+          [(ngModel)]="todoModel.date"
+          matInput
+          [matDatepicker]="picker"
+          name="date"
+        />
+  
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button
+        [disabled]="userForm.invalid"
+        type="submit"
+        mat-raised-button
+        color="primary"
+        onsubmit="onSubmit($event)"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+  
